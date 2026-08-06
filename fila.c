@@ -18,3 +18,35 @@ Fila* cria_fila_vazia(void) {
     f->fim = NULL;
     return f;
 }
+
+// Verifica se a fila está vazia
+// Entrada: fila
+// Retorno: 1 se a fila estiver vazia ou 0 caso contrário
+// Pré-condição: fila criada
+// Pós-condição: nenhuma
+int vazia(Fila* f) {
+    return (f->inicio == NULL);
+}
+
+// Enfileira um elemento no fila da fila
+// Entrada: fila e elemento a ser inserido
+// Retorno: nenhum
+// Pré-condição: fila criada
+// Pós-condição: o elemento é inserido no final da fila
+void enqueue(Fila* f, TipoItem info) {
+    struct no* aux = (struct no*)malloc(sizeof(struct no));
+    if(aux == NULL) {
+        printf("Erro na alocação de memória.\n");
+        return;
+    }
+
+    aux->info = info;
+    aux->prox = NULL;
+
+    if(vazia(f))
+        f->inicio = aux;
+    else
+        f->fim->prox = aux;
+
+    f->fim = aux;
+}
