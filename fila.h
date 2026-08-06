@@ -38,4 +38,18 @@ int vazia(Fila* f);
 // Pós-condição: o elemento é inserido no final da fila
 void enqueue(Fila* f, TipoItem info);
 
+// Exibe os elementos da fila
+// Entrada: fila
+// Retorno: nenhum
+// Pré-condição: fila criada
+// Pós-condição: os elementos da fila são exibidos na tela
+void imprimir(Fila* f);
+
+// Libera a memória ocupada pela fila
+// Entrada: fila
+// Retorno: nenhum
+// Pré-condição: fila criada
+// Pós-condição: toda a memória ocupada pela fila é liberada
+void liberar_fila(Fila* f);
+
 #endif /* fila_h */

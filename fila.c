@@ -50,3 +50,42 @@ void enqueue(Fila* f, TipoItem info) {
 
     f->fim = aux;
 }
+
+// Exibe os elementos da fila
+// Entrada: fila
+// Retorno: nenhum
+// Pré-condição: fila criada
+// Pós-condição: os elementos da fila são exibidos na tela
+void imprimir(Fila* f) {
+    if(vazia(f)) {
+        printf("[ ]\n");
+        return;
+    }
+
+    struct no* aux = f->inicio;
+
+    printf("[ ");
+
+    while(aux != NULL) {
+        printf("%d ", aux->info);
+        aux = aux->prox;
+    }
+
+    printf("]\n");
+}
+
+// Libera a memória ocupada pela fila
+// Entrada: fila
+// Retorno: nenhum
+// Pré-condição: fila criada
+// Pós-condição: toda a memória ocupada pela fila é liberada
+void liberar_fila(Fila* f) {
+    struct no* aux;
+
+    while(f->inicio != NULL) {
+        aux = f->inicio;
+        f->inicio = aux->prox;
+        free(aux);
+    }
+    free(f);
+}
