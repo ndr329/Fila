@@ -12,6 +12,12 @@ int main(int argc, const char * argv[]) {
 
     imprimir(f);
 
+    TipoItem* p = dequeue(f);
+    if(p != NULL)
+        printf("O elemento %d foi removido da fila.\n", *p);
+
+    imprimir(f);
+
     liberar_fila(f);
     f = NULL;
 

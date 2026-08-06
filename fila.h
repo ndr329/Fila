@@ -52,4 +52,11 @@ void imprimir(Fila* f);
 // Pós-condição: toda a memória ocupada pela fila é liberada
 void liberar_fila(Fila* f);
 
+// Remove o primeiro elemento da fila
+// Entrada: fila
+// Retorno: ponteiro para o elemento removido ou NULL, caso a fila esteja vazia
+// Pré-condição: fila criada
+// Pós-condição: o primeiro elemento é removido da fila
+TipoItem* dequeue(Fila* f);
+
 #endif /* fila_h */

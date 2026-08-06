@@ -89,3 +89,35 @@ void liberar_fila(Fila* f) {
     }
     free(f);
 }
+
+// Remove o primeiro elemento da fila
+// Entrada: fila
+// Retorno: ponteiro para o elemento removido ou NULL, caso a fila esteja vazia
+// Pré-condição: fila criada
+// Pós-condição: o primeiro elemento é removido da fila
+TipoItem* dequeue(Fila* f) {
+    if(!vazia(f)) {
+        TipoItem* x = (TipoItem*)malloc(sizeof(TipoItem));
+        if(x == NULL) {
+            printf("Erro na alocação de memória.\n");
+            return NULL;
+        }
+
+        struct no* aux = f->inicio;
+
+        *x = f->inicio->info;
+
+        if(f->inicio == f->fim) // só tem 1 elemento
+            f->fim = NULL;
+        
+        f->inicio = f->inicio->prox;
+        
+        free(aux);
+
+        return x;
+    }
+    else {
+        printf("Fila vazia.\n");
+        return NULL;
+    }
+}
