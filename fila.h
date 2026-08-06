@@ -17,6 +17,11 @@ typedef struct {
     struct no* fim;
 } Fila;
 
-
+// Cria uma fila vazia
+// Entrada: nenhuma
+// Retorno: ponteiro para um fila vazia
+// Pré-condição: nenhuma
+// Pós-condição: uma fila vazia é criada e inicializada
+Fila* cria_fila_vazia(void);
 
 #endif /* fila_h */
