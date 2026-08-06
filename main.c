@@ -18,6 +18,16 @@ int main(int argc, const char * argv[]) {
 
     imprimir(f);
 
+    int res;
+    if(!vazia(f)) {
+        res = busca(f, 2);
+
+        if(res == 1)
+            printf("O elemento pertence a fila.\n");
+        else
+            printf("Elemento não encontrado.\n");
+    }
+
     liberar_fila(f);
     f = NULL;
 

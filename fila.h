@@ -59,4 +59,11 @@ void liberar_fila(Fila* f);
 // Pós-condição: o primeiro elemento é removido da fila
 TipoItem* dequeue(Fila* f);
 
+// Verifica se um elemento pertence a fila
+// Entrada: fila e elemento a ser procurado
+// Retorno: 1 se elemento encontrado ou 0 caso contrário
+// Pré-condição: fila criada
+// Pós-condição: nenhuma
+int busca(Fila* f, TipoItem x);
+
 #endif /* fila_h */

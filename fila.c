@@ -111,7 +111,7 @@ TipoItem* dequeue(Fila* f) {
             f->fim = NULL;
         
         f->inicio = f->inicio->prox;
-        
+
         free(aux);
 
         return x;
@@ -120,4 +120,21 @@ TipoItem* dequeue(Fila* f) {
         printf("Fila vazia.\n");
         return NULL;
     }
+}
+
+// Verifica se um elemento pertence a fila
+// Entrada: fila e elemento a ser procurado
+// Retorno: 1 se elemento encontrado ou 0 caso contrário
+// Pré-condição: fila criada
+// Pós-condição: nenhuma
+int busca(Fila* f, TipoItem x) {
+    struct no* aux = f->inicio;
+
+    while(aux != NULL) {
+        if(aux->info == x)
+            return 1;
+        aux = aux->prox;
+    }
+
+    return 0;
 }
